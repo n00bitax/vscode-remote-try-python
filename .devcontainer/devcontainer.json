@@ -37,7 +37,12 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install -r requirements.txt"
+	"postCreateCommand": "pip3 install -r requirements.txt",
+	 "postStartCommand": {
+        // https://github.com/orgs/community/discussions/26026
+        "umask fix: workspace": ["echo", "$SHELL"],
+        "umask fix: /tmp": ["echo", "testing..."]
+    },
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
